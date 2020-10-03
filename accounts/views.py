@@ -155,7 +155,7 @@ def deletecustomer(request,id):
 	return render(request,context)
 
 @login_required(login_url='signin')
-@admin_only
+#@admin_only
 def createorder(request):
 	form = orderform()
 
@@ -170,7 +170,7 @@ def createorder(request):
 
 
 @login_required(login_url='signin')
-@admin_only
+#@admin_only
 def updateorder(request,id):
 	order = Order.objects.get(id=id)
 	form = orderform(instance=order)
@@ -186,7 +186,7 @@ def updateorder(request,id):
 
 
 @login_required(login_url='signin')
-@admin_only
+#@admin_only
 def deleteorder(request,id):
 	order=Order.objects.get(id=id)
 	if request.method== "POST":
